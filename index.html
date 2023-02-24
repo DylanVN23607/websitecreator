@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Create Website</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="icon.png">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body style="text-align: center;">
+        <div class="creator">
+            <h3>THIS IS WHERE YOU WILL RECEIVE THE CODE. PASTE IT ON ANY HTML FILE AND YOU WILL HAVE THE WEBSITE.</h3>
+            <textarea id="websiteCode" readonly></textarea>
+            <br>
+            <button onclick="copy(document.getElementById('websiteCode').value)">Copy Code</button>
+
+            <div>
+                <h3 style="display: inline-block;">Red:</h3>
+                <input type="radio" id="selectBackgroundRed" style="display: inline-block;" onclick="
+                getRadioInputBackground('blue').checked=false
+                getRadioInputBackground('white').checked=false
+                getRadioInputBackground('gray').checked=false
+                getRadioInputBackground('black').checked=false
+                ">
+                <h3 style="display: inline-block;">Blue:</h3>
+                <input type="radio" id="selectBackgroundBlue" style="display: inline-block;" onclick="
+                getRadioInputBackground('red').checked=false
+                getRadioInputBackground('white').checked=false
+                getRadioInputBackground('gray').checked=false
+                getRadioInputBackground('black').checked=false
+                ">
+                <h3 style="display: inline-block;">White:</h3>
+                <input type="radio" id="selectBackgroundWhite" style="display: inline-block;" checked onclick="
+                getRadioInputBackground('blue').checked=false
+                getRadioInputBackground('red').checked=false
+                getRadioInputBackground('gray').checked=false
+                getRadioInputBackground('black').checked=false
+                ">
+                <h3 style="display: inline-block;">Gray:</h3>
+                <input type="radio" id="selectBackgroundGray" style="display: inline-block;" onclick="
+                getRadioInputBackground('blue').checked=false
+                getRadioInputBackground('white').checked=false
+                getRadioInputBackground('red').checked=false
+                getRadioInputBackground('black').checked=false
+                ">
+                <h3 style="display: inline-block;">Void Black:</h3>
+
+                <input type="radio" id="selectBackgroundBlack" style="display: inline-block;" onclick="
+                getRadioInputBackground('blue').checked=false
+                getRadioInputBackground('white').checked=false
+                getRadioInputBackground('gray').checked=false
+                getRadioInputBackground('red').checked=false
+                ">
+                <br>
+                <button onclick="update()">Update everything</button>
+            </div>
+
+            <p>
+                 <header style="background-color: orchid; color: white;">Create new text</header>
+                 <br>
+            <button onclick="createText()" style="border: none;">Create piece of text</button>
+               <br><br>
+               <textarea type="text" id="textSizeInput" placeholder="Insert Text Size Here"></textarea>
+               <br>
+               <textarea id="NewText" placeholder="Insert Text of the new text Here"></textarea>
+               <br>
+                <textarea id="textColor" style="resize: both;" placeholder="Insert the color of the text. It can be either the name of the color or #HEX"></textarea>
+                <br>
+                <div>
+                    <h3 style="display: inline-block;">Segoe UI:</h3>
+                    <input type="radio" style="display: inline-block;" id="SelectSegoeUI" style="display: inline-block;" onclick="document.getElementById('SelectSansSerif').checked=false; document.getElementById('SelectImpact').checked=false;">
+                    <h3 style="display: inline-block;">Sans Serif:</h3>
+                    <input type="radio" checked style="display: inline-block;" id="SelectSansSerif" onclick="document.getElementById('SelectImpact').checked=false; document.getElementById('SelectSegoeUI').checked=false;">
+                    <h3 style="display: inline-block;">Impact:</h3>
+                    <input type="radio" style="display: inline-block;" id="SelectImpact" onclick="document.getElementById('SelectSansSerif').checked=false; document.getElementById('SelectSegoeUI').checked=false;">
+                </div>
+                <br><br>
+           </p>
+
+          <p>
+               <header style="background-color: orchid; color: white;">Create an image</header>
+               <br>
+              <button onclick="createImage()">Create the image</button>
+              <br><br>
+               <textarea type="text" id="imageSrc" placeholder="Insert Image Source Here"></textarea>
+             <br><br>
+          </p>
+          <br><br><br>
+           <h1>WEBSITE PREVIEW BELOW</h1>
+           <h3>NOTE: Website doesnt have same background color as your website does.</h3>
+           <br><br><br>
+        </div>
+    <div id="website"></div>
+        <script src="index.js"></script>
+    </body>
+</html>

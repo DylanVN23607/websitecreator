@@ -1,0 +1,29 @@
+.creator h1,h2,h3,h4,h5,h6 {
+    font-family: 'Segoe UI';
+    color:white;
+}
+
+.creator header {
+    font-family: 'Segoe UI';
+}
+
+.creator textarea,button {
+    background-color: violet;
+    color: white;
+    border-color: violet;
+    border-radius: 50px;
+}
+
+.creator button {
+    height: 35px;
+    width: 300px;
+}
+
+.creator textarea {
+    width: 300px;
+    text-align: center;
+}
+
+body {
+    background-color: darkorchid;
+}
