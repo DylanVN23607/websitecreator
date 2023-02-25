@@ -2,6 +2,10 @@ let websiteCodeText = document.getElementById("websiteCode")
 let website = document.getElementById("website")
 let backgroundColor = "white";
 
+const copy = (text)=>{
+    navigator.clipboard.writeText(text)
+}
+
 const getRadioInputBackground = (input)=>{
     let slicedInput = input.split("")
     slicedInput[0] = slicedInput[0].toUpperCase()
