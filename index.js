@@ -4,6 +4,8 @@ let backgroundColor = "white";
 
 let elements = []
 let elementsIds = []
+let elementDeleterButtons = []
+
 let elementDiv = document.getElementById("elements")
 
 const copy = (text)=>{
@@ -89,7 +91,7 @@ const update = (added,id)=>{
     websiteCodeText.value="<body style='background-color: " + backgroundColor +"'>"+website.innerHTML+"</body>"
 
     if (added!=undefined) {
-        elementsIds.push(id)
+            elementsIds.push(id)
 
         if (added=="text") {
             elements.push("Text")
@@ -100,29 +102,36 @@ const update = (added,id)=>{
         }
 
         elements.forEach((elem)=>{
-            let newElemDeleter = document.createElement("button")
-            newElemDeleter.innerHTML=elem
-            console.log(elements.length)
+            let whatAmI = elem
+            console.log(whatAmI)
+            console.log(elem)
 
-            console.log("started the loop")
+            let newElemDeleter = document.createElement("button")
+            if (!elementDeleterButtons.includes(elements.length)) {
+            elementDeleterButtons.push(elements.length)
+            newElemDeleter.innerHTML=elements.length
+        }
+
+        let gonnaAppend = true;
+        if (newElemDeleter.innerHTML=="") {
+            console.log("GHOST")
+            gonnaAppend=false
+        }
+
             newElemDeleter.addEventListener("click",()=>{
                 if (document.getElementById(id)!=null) {
                     document.getElementById(id).remove()
             }
-                newElemDeleter.remove()
                 delete elements[elementsIds.indexOf(id)]
                 delete elementsIds[elementsIds.indexOf(id)]
                 newElemDeleter.remove()
                 update()
             })
 
-            newElemDeleter.onmouseover = ()=>{
-                if (document.getElementById(id)==null) {
-                    newElemDeleter.remove()
-                }
+            if (gonnaAppend) {
+                newElemDeleter.innerHTML=elements[parseInt(newElemDeleter.innerHTML)-1]
+                elementDiv.appendChild(newElemDeleter)
             }
-            elementDiv.appendChild(newElemDeleter)
-            console.log("ended the loop")
             return
             
         })
